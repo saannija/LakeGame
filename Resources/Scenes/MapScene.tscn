@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Objects/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Base.tres" type="TileSet" id=2]
+[ext_resource path="res://Resources/Props/Basic/Box.tscn" type="PackedScene" id=3]
+
+[node name="Scene" type="Node2D"]
+position = Vector2( 120, 51 )
+
+[node name="TileMap" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 16 )
+cell_y_sort = true
+collision_layer = 3
+format = 1
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Box" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 50, -3 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -15, 18 )
+
+[node name="Box2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 34, 5 )
